@@ -1,13 +1,9 @@
 package io.fdlessard.codebites.serialization;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import org.springframework.beans.factory.annotation.Value;
+import io.fdlessard.codebites.serialization.Customer.Names;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.core.io.Resource;
-
-import java.io.File;
 
 @SpringBootApplication
 public class SerializationApplication {
@@ -16,7 +12,8 @@ public class SerializationApplication {
     public static void main(String[] args) throws Exception{
         SpringApplication.run(SerializationApplication.class, args);
 
-       Customer customer = new Customer("TotoId", "TotoCode", 4, Integer.hashCode(10));
+       Customer.Names name = new Names("prenom", "nom de famille");
+       Customer customer = new Customer("TotoId",  4, Integer.hashCode(10), "totoCode", Integer.valueOf(10), name);
        // Customer customer = new Customer("TotoId", "TotoCode");
 
 
