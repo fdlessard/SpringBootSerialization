@@ -1,0 +1,12 @@
+{
+  "id": {
+    "value": "TotoId"
+  },
+  "code": "TotoCode",
+  "intId": {
+    "value": 4
+  },
+  "integerId": {
+    "value": 10
+  }
+}
