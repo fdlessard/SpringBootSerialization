@@ -23,18 +23,33 @@ public class SerializationApplication {
 
         System.out.println(s);
 
-        String ss = "{\n" +
-                "  \"id\": {\n" +
-                "    \"value\": \"TotoId\"\n" +
-                "  },\n" +
-                "  \"code\": \"TotoCode\",\n" +
-                "  \"intId\": {\n" +
-                "    \"value\": 4\n" +
-                "  },\n" +
-                "  \"integerId\": {\n" +
-                "    \"value\": 10\n" +
-                "  }\n" +
-                "}";
+        String ss = "{\n"
+                + "  \"id\": {\n"
+                + "    \"value\": \"TotoId\"\n"
+                + "  },\n"
+                + "  \"intId\": {\n"
+                + "    \"value\": 4\n"
+                + "  },\n"
+                + "  \"integerId\": {\n"
+                + "    \"value\": 10\n"
+                + "  },\n"
+                + "  \"codeString\": [\n"
+                + "    {\n"
+                + "      \"value\": \"totoCode\"\n"
+                + "    }\n"
+                + "  ],\n"
+                + "  \"codeInteger\": [\n"
+                + "    {\n"
+                + "      \"value\": 10\n"
+                + "    }\n"
+                + "  ],\n"
+                + "  \"names\": [\n"
+                + "    {\n"
+                + "      \"firstNames\": \"prenom\",\n"
+                + "      \"lastName\": \"nom de famille\"\n"
+                + "    }\n"
+                + "  ]\n"
+                + "}";
 
         System.out.println(ss);
 
