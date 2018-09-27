@@ -6,14 +6,14 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 import java.io.IOException;
 import java.util.Collections;
 
-public class ObjectToSingletonListSerializer<T> extends JsonSerializer<T> {
+public class PropertyObjectToSingletonListSerializer<T> extends JsonSerializer<T> {
 
     @Override
     public void serialize(
             T value,
-            JsonGenerator gen,
-            SerializerProvider provider
+            JsonGenerator jsonGenerator,
+            SerializerProvider serializerProvider
     ) throws IOException {
-        gen.writeObject(Collections.singleton(value));
+        jsonGenerator.writeObject(Collections.singleton(value));
     }
 }

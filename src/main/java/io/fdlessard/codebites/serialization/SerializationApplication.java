@@ -9,13 +9,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SerializationApplication {
 
 
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         SpringApplication.run(SerializationApplication.class, args);
 
-       Customer.Names name = new Names("prenom", "nom de famille");
-       Customer customer = new Customer("TotoId",  4, Integer.hashCode(10), "totoCode", Integer.valueOf(10), name);
-       // Customer customer = new Customer("TotoId", "TotoCode");
-
+        Customer.Names name = new Names("prenom", "nom de famille");
+        Customer customer = new Customer("TotoId", 4, Integer.hashCode(10), "totoCode", Integer.valueOf(10), name);
 
         ObjectMapper objectMapper = new ObjectMapper();
 

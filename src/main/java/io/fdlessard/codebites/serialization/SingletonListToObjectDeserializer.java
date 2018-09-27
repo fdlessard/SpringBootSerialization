@@ -14,18 +14,18 @@ public class SingletonListToObjectDeserializer<T> extends JsonDeserializer<T> im
     private Class<T> typeParameterClass;
 
     @Override
-    public JsonDeserializer<T> createContextual(DeserializationContext context, BeanProperty property) {
-        typeParameterClass = (Class<T>) property.getType().getRawClass();
+    public JsonDeserializer<T> createContextual(DeserializationContext deserializationContext, BeanProperty beanProperty) {
+        typeParameterClass = (Class<T>) beanProperty.getType().getRawClass();
         return this;
     }
 
     @Override
-    public T deserialize(JsonParser parser, DeserializationContext deserializationContext) throws IOException {
+    public T deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException {
 
-        ObjectCodec oc = parser.getCodec();
-        JsonNode node = parser.getCodec().readTree(parser);
+        ObjectCodec objectCodec = jsonParser.getCodec();
+        JsonNode node = jsonParser.getCodec().readTree(jsonParser);
 
-        return oc.treeToValue(node.get(0), typeParameterClass);
+        return objectCodec.treeToValue(node.get(0), typeParameterClass);
     }
 
 }
