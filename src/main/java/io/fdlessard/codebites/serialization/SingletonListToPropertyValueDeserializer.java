@@ -9,7 +9,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.deser.ContextualDeserializer;
 import java.io.IOException;
 
-public class SingletonListToPropertyDeserializer<T> extends JsonDeserializer<T> implements ContextualDeserializer {
+public class SingletonListToPropertyValueDeserializer<T> extends JsonDeserializer<T> implements ContextualDeserializer {
 
     private Class<T> typeParameterClass;
 

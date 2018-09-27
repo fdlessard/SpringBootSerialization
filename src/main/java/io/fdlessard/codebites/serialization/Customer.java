@@ -22,11 +22,11 @@ public class Customer {
     private Integer integerId;
 
     @JsonSerialize(using = PropertyValueToSingletonListSerializer.class)
-    @JsonDeserialize(using = SingletonListToPropertyDeserializer.class)
+    @JsonDeserialize(using = SingletonListToPropertyValueDeserializer.class)
     private String codeString;
 
     @JsonSerialize(using = PropertyValueToSingletonListSerializer.class)
-    @JsonDeserialize(using = SingletonListToPropertyDeserializer.class)
+    @JsonDeserialize(using = SingletonListToPropertyValueDeserializer.class)
     private Integer codeInteger;
 
     @JsonSerialize(using = PropertyObjectToSingletonListSerializer.class)
