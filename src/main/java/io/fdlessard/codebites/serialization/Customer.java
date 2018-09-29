@@ -30,7 +30,7 @@ public class Customer {
     private Integer codeInteger;
 
     @JsonSerialize(using = PropertyObjectToSingletonListSerializer.class)
-    @JsonDeserialize(using = SingletonListToObjectDeserializer.class)
+    @JsonDeserialize(using = SingletonListToPropertyObjectDeserializer.class)
     private Names names;
 
 

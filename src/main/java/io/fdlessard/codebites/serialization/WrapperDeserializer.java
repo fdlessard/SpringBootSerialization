@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.deser.ContextualDeserializer;
+
 import java.io.IOException;
 
 public class WrapperDeserializer<T> extends JsonDeserializer<T> implements ContextualDeserializer {
@@ -23,7 +24,7 @@ public class WrapperDeserializer<T> extends JsonDeserializer<T> implements Conte
     public T deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException {
 
         ObjectCodec objectCodec = jsonParser.getCodec();
-        JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+        JsonNode node = objectCodec.readTree(jsonParser);
 
         return objectCodec.treeToValue(node.get("value"), typeParameterClass);
     }
